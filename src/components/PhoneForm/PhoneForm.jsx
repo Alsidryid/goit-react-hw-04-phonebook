@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 import style from './PhoneForm.module.css'
 
@@ -7,29 +7,24 @@ const INITIAL_STATE = {
         number:''
 }
 
-export default class PhoneForm extends Component{
-  nameId = nanoid();
-  phoneId = nanoid();
-
-  state = { ...INITIAL_STATE }
+const PhoneForm = ({ onSubmit }) => {
+  const [state, setState] = useState({...INITIAL_STATE})
+    const nameId = nanoid();
+  const phoneId = nanoid();
   
-  handleSubmit = (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit({...this.state})
-    this.setState({...INITIAL_STATE})
+    onSubmit({...state})
+    setState({...INITIAL_STATE})
   }
 
-  handleChange = ({target}) => {
+  const handleChange = ({target}) => {
     const { name, value } = target
-    this.setState({
-      [name]:value
-    })
+    setState({...state,[name]:value })
+
   }
-  
-  render() {
-      
-    const { nameId, phoneId, handleSubmit, handleChange } = this;
-    const{name, number} = this.state
+
+   const{name, number} = state
     return (
           <form className={style.form} onSubmit = {handleSubmit}>
               <div>
@@ -58,5 +53,6 @@ export default class PhoneForm extends Component{
               <button className={style.btn} type ="submit">Add contact</button>
         </form>
         )
-    }
 }
+
+export default PhoneForm
