@@ -1,0 +1,15 @@
+.label{
+    display: block;
+    color: rgb(85, 84, 84);
+}
+.input{
+    margin-top: 10px;
+    display: block;
+    font-size: 15px;
+    padding: 2px;
+    outline: none;
+    border: 1px solid black;
+}
+.input:hover, .input:focus{
+    border: 1px solid blue;
+}

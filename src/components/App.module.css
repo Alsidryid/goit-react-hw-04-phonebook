@@ -1,0 +1,12 @@
+.box{
+    margin: auto;
+    width: 500px;
+    padding: 30px 15px;
+    background-color: rgba(240, 248, 255, 0.623);
+  height: 100vh;
+}
+.title{
+ margin-bottom: 5px;
+ color: rgb(66, 66, 66);
+ text-align: center;
+}

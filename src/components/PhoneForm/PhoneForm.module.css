@@ -1,0 +1,30 @@
+.form{
+    border: 2px solid rgba(0, 0, 0, 0.336);
+    padding: 10px;
+    border-radius: 4px;
+}
+.label{
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+.input{
+    margin-bottom: 15px;
+    border: 1px solid black;
+    outline: none;
+}
+.btn{
+    background-color: rgba(75, 75, 223, 0.856);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: aliceblue;
+}
+.btn:hover, .btn:focus{
+    background-color: rgba(10, 10, 207, 0.856);
+}
+.input:hover,
+.input:focus {
+    border: 1px solid blue;
+}
