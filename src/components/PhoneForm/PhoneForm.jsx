@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { nanoid } from "nanoid";
 import style from './PhoneForm.module.css'
 
@@ -9,8 +9,8 @@ const INITIAL_STATE = {
 
 const PhoneForm = ({ onSubmit }) => {
   const [state, setState] = useState({...INITIAL_STATE})
-    const nameId = nanoid();
-  const phoneId = nanoid();
+  const nameId = useMemo(() => nanoid(), []);
+  const phoneId = useMemo(() => nanoid(), []);
   
     const handleSubmit = (e) => {
     e.preventDefault();
